@@ -30,12 +30,6 @@ def signUp():
     db.session.commit()
     return {"username": username , "password":password}
 
-@app.route("/show/<int:id>/")
-def show(id):
-    try:
-        user = User.query.get(id=id)
-        return {"username": user.username , "password":user.password}
-    except:
-        return "!!!!!"
+
     
 app.run()
